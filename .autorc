@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    "git-tag"
+  ],
+  "owner": "level20",
+  "repo": "plic-auto-workflow-test",
+  "name": "Cameron Rollhieser",
+  "email": "crollheiser@level20.com",
+  "onlyPublishWithReleaseLabel": true
+}
