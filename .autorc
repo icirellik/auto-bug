@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    "git-tag"
+  ],
+  "owner": "icirellik",
+  "repo": "auto-bug",
+  "name": "Test User",
+  "email": "test@example.org",
+  "onlyPublishWithReleaseLabel": true
+}

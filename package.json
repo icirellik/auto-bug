@@ -1,0 +1,17 @@
+{
+  "name": "auto-bug",
+  "version": "1.0.0",
+  "description": "This is a bug report",
+  "main": "index.js",
+  "scripts": {
+    "labels": "auto create-labels",
+    "release": "auto shipit -vv",
+    "release:dry": "auto shipit -vv --dry-run"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@auto-it/git-tag": "^11.2.0",
+    "auto": "^11.2.0"
+  }
+}

@@ -1,0 +1,40 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: write
+
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch Tags
+        run: git fetch --tags
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Auto Release Dry
+        run: npm run release:dry
+
+      - name: Auto Release
+        run: npm run release
